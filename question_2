@@ -1,0 +1,24 @@
+CREATE DATABASE practice;
+use practice;
+CREATE TABLE customer ( customer_id INT PRIMARY KEY,
+customer VARCHAR(50),
+mode VARCHAR (50),
+city VARCHAR(20)
+);
+INSERT INTO  question
+( customer_id,customer,mode,city) VALUES
+(101,"rahul kumar","netbanking","Portland"),
+(102,"hemant thakur","credit card","maimi"),
+(103,"aman sharma","credit card","seattle"),
+(104,"arjeet yadav","netbanking","denver"),
+(105,"love kumar","credit card","new orleans"),
+(106,"keshav kumar","netbankig","minneapolis"),
+(107,"ganesh varshney","debit card","minneapolis"),
+(108,"prince kushwah","netbanking","minneapolis"),
+(109,"anshul kumar","netbanking","minneapolis"),
+(110,"mayank yadav ","credit card","minneapolis");
+SELECT * FROM question;
+-- SELECT mode, count(customer) FROM payment GROUP BY mode;
+SELECT mode, COUNT(customer) AS total_customers
+FROM customer
+GROUP BY mode;
